@@ -8,8 +8,7 @@ class View:
             guess = int(request.POST.get('guess'))
             secret_number = 50
             if guess == secret_number:
-                return render(request, 'guess_game_app/random_number.html', {'result': 'Congratulations! You guessed the '
-                                                                              'correct number.', "current_number":
+                return render(request, 'guess_game_app/random_number.html', {'result': 'You win ', "current_number":
                     guess, "class": "win"})
             elif guess < secret_number:
                 return render(request, 'guess_game_app/random_number.html', {'result': 'Too low! Try again.',

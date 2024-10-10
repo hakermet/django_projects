@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guess Game</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{% static 'guess_game_app/css/style.css' %}">
 </head>
 <body>
     <div class="container">
@@ -19,12 +19,14 @@
             {% csrf_token %}
             <label for="guess">Your guess:</label>
             <input type="number" id="guess" name="guess" value="{{ current_number }}">
+            {% if result %}
+                <p class="{{ class }}">{{ result }}.</p>
+            {% endif %}
             <button type="submit">Submit</button>
+
         </form>
 
-        {% if result %}
-            <p class="{{ class }}">Your guess was {{ result }}.</p>
-        {% endif %}
+
 
     </div>
 

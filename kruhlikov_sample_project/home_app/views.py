@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 class View:
     @staticmethod
     def home(request):
