@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2B2D42, #8D99AE);
+    color: #EDF2F4;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+form {
+    max-width: 350px;
+    padding: 30px;
+    background: rgba(43, 45, 66, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(255, 99, 132, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 99, 132, 0.4);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 99, 132, 0.1);
+    border: 1px solid rgba(255, 99, 132, 0.3);
+    border-radius: 8px;
+    outline: none;
+    color: #FF6399;
+    font-size: 16px;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+form input:focus {
+    background: rgba(255, 99, 132, 0.2);
+    border: 1px solid #FF85A1;
+}
+
+form button {
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(to right, #FF6399, #F72585);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background: linear-gradient(to right, #FF85A1, #F06292);
+    transform: scale(1.05);
+}
+
+form button:disabled {
+    background: #7D7D7D;
+    cursor: not-allowed;
+}
+
+form .error, form .win, form .lose {
+    min-height: 20px; /* Це дозволить зарезервувати місце для повідомлення */
+    display: block;
+}
+
+form .error {
+    color: #EF233C;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.win {
+    color: #80ED99;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.lose {
+    color: #EF233C;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Анімація при вході */
+form {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

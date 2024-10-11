@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 
-
 class View:
     @staticmethod
     def hello(request) -> HttpResponse:
